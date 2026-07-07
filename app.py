@@ -33,17 +33,17 @@ st.divider()
 if st.button('Predict'):
     warnings_list=[]
     if ph<4.0:
-        warnings_list.append(ph is less than 4 most of the crops doesnot survive this much aicidity)
+        warnings_list.append('ph is less than 4 most of the crops doesnot survive this much aicidity')
     elif ph>9.0:
-        warnings_list.append(ph is more than 9 very few grow in this alkaline nature)
+        warnings_list.append('ph is more than 9 very few grow in this alkaline nature')
     if(temperature <10):
-        warnings_list.append(most crops in dataset prefer warmer condition)
+        warnings_list.append('most crops in dataset prefer warmer condition')
     elif(temperature >42):
-        warnings_list.append(extreme heat many predict good result )
+        warnings_list.append('extreme heat many predict good result ')
     if humidity<15:
-        warnings_list.append(very dry conditions)
+        warnings_list.append('very dry conditions')
     if rainfall<25:
-        warnings_list.append(predctions may be incorrect due to extreme dry conditions)
+        warnings_list.append('predctions may be incorrect due to extreme dry condition's)
     for w in warnings_list:
         st.warning(w)
     
