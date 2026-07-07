@@ -31,6 +31,23 @@ with col2:
 st.divider()
 
 if st.button('Predict'):
+    warnings_list=[]
+    if ph<4.0:
+        warnings_list.append(ph is less than 4 most of the crops doesnot survive this much aicidity)
+    elif ph>9.0:
+        warnings_list.append(ph is more than 9 very few grow in this alkaline nature)
+    if(temperature <10):
+        warnings_list.append(most crops in dataset prefer warmer condition)
+    elif(temperature >42):
+        warnings_list.append(extreme heat many predict good result )
+    if humidity<15:
+        warnings_list.append(very dry conditions)
+    if rainfall<25:
+        warnings_list.append(predctions may be incorrect due to extreme dry conditions)
+    for w in warnings_list:
+        st.warning(w)
+    
+    
     input_data=pd.DataFrame([[N,P,K,temperature,humidity,ph,rainfall]],columns=['N','P','K','temperature','humidity','ph','rainfall'])
     prediction=model.predict(input_data)
     crop_name=le.inverse_transform(prediction)[0]
