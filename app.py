@@ -55,6 +55,8 @@ if st.button('Predict'):
     confidence=probabilities.max()*100
     st.success(f" Recommended crop :- {crop_name}")
     st.info(f"Model confidence :- {confidence:.2f}")
+    if confidence<50:
+        st.warning('the inputs are unusual for this dataset treat with caution')
     st.subheader('top 3 crops')
     top3_indies=probabilities.argsort()[-3:][::-1]
     for i,idx in enumerate(top3_indies):
