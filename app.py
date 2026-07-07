@@ -43,7 +43,7 @@ if st.button('Predict'):
     if humidity<15:
         warnings_list.append('very dry conditions')
     if rainfall<25:
-        warnings_list.append('predctions may be incorrect due to extreme dry condition's)
+        warnings_list.append('predctions may be incorrect due to extreme dry condition')
     for w in warnings_list:
         st.warning(w)
     
